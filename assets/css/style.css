@@ -2,65 +2,101 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  --header-color: #262626;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.main {
+  flex-grow: 1;
+  background-color: #bcbebe;
+  background-image: url(./../images/Rio_Coffee.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
 }
 
 :root {
   font-family: sans-serif;
-  font-size: 18px;
+  font-size: 20px;
+}
 
-}
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
-.container {
-  display: flex;
-  flex-flow: column wrap;
-  max-width: 1000px;
-  min-height: 100vh;
-  margin: auto;
-}
+
 .header {
+  min-height: 10vh;
+  padding: 2em 5%;
   display: flex;
-  padding: 10px;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  background-color: pink;
+  background-color: var(--header-color);
+  color: #eff5f4;
 }
-.logo {
-  font-size: 2.5em;
+
+.list,
+.header-link {
+  text-transform: uppercase;
+  font-weight: bold;
 }
+
+.logo:after {
+  content: 'Rio Coffee';
+  font-family: 'Comic Neue', cursive;
+  font-size: 1.8em;
+}
+
 .list {
   list-style: none;
 }
+
 .list-item {
   display: inline-block;
 }
-.link {
+
+.list>.list-item:first-of-type > .list-link {
+  padding-left: 0;
+}
+
+.list>.list-item:last-of-type > .list-link {
+  padding-right: 0;
+}
+
+.list-link {
   display: block;
-  padding: 0.7em;
+  max-width: 132.78px;
+  padding: 0.8em;
 }
-.main {
-  flex-grow: 1;
-  padding: 10px;
-  background-color: blanchedalmond;
-  text-align: center;
+
+.logo:after,
+.list-link,
+.header-link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.wrapper {
-  display: inline-block;
-  width: 45%;
-  vertical-align: top;
+
+.logo:after,
+.list,
+.header-link {
+  margin: 0 10px;
 }
-.main-article {
-  padding: 10px;
-  border: 3px solid pink;
-}
-.main-article + .main-article {
-  margin-top: 1em;
-}
-footer {
-  
-  padding: 10px;
-  background-color: pink;
-  text-align: center;
+
+.header-link {
+  max-width: 157px; 
+  border: 2px solid #eff5f4;
+  border-radius: 3%;
+  padding: 20px 40px;
+  background-color: var(--header-color) ;
+  color: #eff5f4;
+  font-size: 15px;
+  cursor: pointer;
 }
